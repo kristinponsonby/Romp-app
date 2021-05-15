@@ -18,3 +18,5 @@ group :test do
   gem 'capybara'
   gem 'rack-test'
 end
+
+gem "dotenv", "~> 2.7"
