@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
+    has_many :dog_parks
     has_secure_password
     validates :username, uniqueness: true
-    has_many :dog_parks
+    validates :password, length: { in: 6..20 }
+   
 end

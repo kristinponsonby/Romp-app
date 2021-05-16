@@ -1,0 +1,18 @@
+<br>
+<h1> Add a New Dog Park </h1>
+<br>
+<form action="/dogparks" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="dogpark[name]" value= <%=@dog_park.name %>><br>
+    <br>
+    <label for="neighborhood">Neighborhood:</label><br>
+    <input type="text" id="neighborhood" name="dogpark[neighborhood]" value= <%=@dog_park.neighborhood %>><br>
+    <br>
+    <label for="size">Size:</label><br>
+    <input type="text" id="size" name="dogpark[size]" value= <%=@dog_park.size %>><br>
+    <br>
+    <label for="water">Water Available:</label><br>
+    <input type="text" id="water" name="dogpark[water]" value= <%=@dog_park.water %>><br>
+    <br>
+    <input type="submit" value="Submit New Park">
+</form

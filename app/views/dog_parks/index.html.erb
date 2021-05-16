@@ -1,0 +1,8 @@
+<h1> Dog Parks </h1>
+<ul>
+<% @dog_parks.each do |dog_park| %>
+ <li><a href="dogparks/<%= dog_park.id %>"><%= dog_park.name %></a></li>
+
+<% end %>
+
+</ul>
