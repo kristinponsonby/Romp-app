@@ -19,6 +19,9 @@
 
       <nav>
       <% if logged_in? %>
+      <a href="/profile">My Profile</a>
+      <a href="/dogparks/new">New Park</a>
+       <a href="/dogparks">All Dog Parks</a>
       <a href="/users">All Users</a>
       <a href="/logout">Log Out</a>
       <% else %>
@@ -27,6 +30,14 @@
       <% end %>
       </nav>
 
+        <% if flash[:errors] %> 
+          <ul class="errors">
+            <% flash[:errors].each do |error| %>
+              <li><%= error %></li>
+               <% end %>
+          </ul>  
+        <% end %>
+           
         <%= yield %>
 
       <footer class="branding">

@@ -1,3 +1,16 @@
-<h1><%= user.username %></h1>
+<h1><%= @user.username %></h1>
+    <% if @user.dog_parks.any? %>
+   <h3> Here's Your Dog Parks </h3>
+    <% @user.dog_parks.each do |dogpark| %>
+       <a href="/dogparks/<%=dogpark.id %>"><%=dogpark.name%></a>
+           <% end %>
+        <% else %>
+   <h2> You haven't logged any dog parks yet. Womp Womp. </h2>
+        <% if @user == current_user %>
+     <p><a href="/dogparks/new"> Log Your First Dog Park </a></p>
+         <% end %>
+    <% end %>
 
-<p>More info will go here!</p>
+
+
+   
