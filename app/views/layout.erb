@@ -1,35 +1,34 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-
-    <title>RompApp</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="/stylesheets/main.css" />
-  </head>
-  <body>
-
-    <div class="wrapper">
-
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Romp!</title>
+        <meta name="description" content="An app for tracking dog parks">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+    </head>
+    <body>
+ 
       <nav>
-      <% if logged_in? %>
-      <a href="/profile">My Profile</a>
-      <a href="/dogparks/new">New Park</a>
-       <a href="/dogparks">All Dog Parks</a>
-      <a href="/users">All Users</a>
-      <a href="/logout">Log Out</a>
-      <% else %>
-      <a href="/users/new">Sign Up</a>
-      <a href="/login">Log In</a> 
-      <% end %>
+        <img class="logo" src="/images/favicon.ico">
+          <% if logged_in? %>
+            <a href="/profile">My Profile</a>&nbsp;&nbsp;
+            <a href="/dogparks/new">New Park</a>&nbsp;&nbsp;
+            <a href="/dogparks">All Dog Parks</a>&nbsp;&nbsp;
+            <a href="/users">All Users</a>&nbsp;&nbsp;
+            <a href="/logout">Log Out</a>&nbsp;&nbsp;
+        <% end %>
       </nav>
 
+  
+    <title>Romp! Track All Your Favorite DC Dog Parks</title>
+    
+
+
+
+      
+ 
         <% if flash[:errors] %> 
           <ul class="errors">
             <% flash[:errors].each do |error| %>
@@ -38,17 +37,8 @@
           </ul>  
         <% end %>
            
-        <%= yield %>
+    <%= yield %>
 
-      <footer class="branding">
-        <small>&copy; 2021 <strong>RompApp</strong></small>
-      </footer>
-    </div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <!--[if lt IE 7]>
-      <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-      <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
-    <![endif]-->
   </body>
 </html>

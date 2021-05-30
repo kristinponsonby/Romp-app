@@ -1,4 +1,4 @@
 class DogPark < ActiveRecord::Base
     belongs_to :user
-    validates :name, :neighborhood, :size, :water, presence: :true
+    validates :name, :address, :neighborhood, :size, :water, presence: :true
 end

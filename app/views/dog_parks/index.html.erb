@@ -1,8 +1,27 @@
-<h1> Dog Parks </h1>
-<ul>
-<% @dog_parks.each do |dog_park| %>
- <li><a href="dogparks/<%= dog_park.id %>"><%= dog_park.name %></a></li>
+<div class="hero-image-2">
+  <div class="hero-text-2">
+    <p>All Dog Parks</p>
+    </div>
+    </div>
+    <div class="text">
+<br>
+<br>
 
+<form method="get" action="/dogparks">
+<input type="text" name="search">
+<input type="submit" value="Search for a dog park">
+</form>
+<ul>
+
+<% @dog_parks.each do |dog_park| %>
+<div class="cards">
+<div class="container">
+<div class="card">
+ <p><a href="dogparks/<%= dog_park.id %>"><%= dog_park.name %></a></p>
+</div>
+</div>
+</div>
 <% end %>
 
 </ul>
+</div>

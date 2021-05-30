@@ -1,1 +1,26 @@
-<h1> Welcome <%= logged_in? ? current_user.username : "dog lover!" %> </h1>
+<div class="hero-image">
+  <div class="hero-text">
+    <p>Romp!</p>
+    <p>A place for dog lovers</p>
+     <% if logged_in? %>
+      <button><a href="/logout">Log Out</a>&nbsp;&nbsp;</button>
+         <%else%>
+    <button><a href="/users/new">Sign Up</a>&nbsp;&nbsp;</button>
+    <button><a href="/login">Log In</a> &nbsp;&nbsp;</button>
+          <% end %>
+  </div>
+
+</div>
+<div class="text">
+<br>
+<h2>Welcome <%= logged_in? ? current_user.username : "to Romp!" %> </h2>
+<h3><a href="/dogparks/new">Track all your favorite dog parks</a>&nbsp;&nbsp;</h3>
+
+
+<p> If you have a dog in the DC metro area, you know there are TONS of dog parks to visit in this city.<p>
+<p> Log your favorite dog parks so you don't have to spend time trying to remember which one you visited last, where it was, and if they had water available.</p>
+<p> Search other Romp! user's dog parks to discover fun new places for you and your furry friend to visit.</p>
+<br>
+<br>
+
+

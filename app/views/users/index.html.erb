@@ -1,8 +1,12 @@
-<h1> Want to discover new dog parks? Here's All the other DC dog park fans</h1>
+<div class="hero-image-2">
+  <div class="hero-text-2">
+    <p>Want to Discover New Dog Parks?</p>
+    </div>
+    </div>
+    <div class="text">
 <ul>
+<h4>Here's all the other DC dog park fans:</h4>
 <% @users.each do |user| %>
-<li>
-<a href="/users/<%= user.id %>"><%= user.username %></a>
-</li>
+<p><a href="/users/<%= user.id %>"><%= user.username %></a></p>
 <% end %>
 </ul>

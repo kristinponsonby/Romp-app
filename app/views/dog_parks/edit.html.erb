@@ -1,10 +1,18 @@
-<br>
-<h1> Edit <%= @dog_park.name %> </h1>
+<div class="hero-image-2">
+  <div class="hero-text-2">
+    <p>Edit <%= @dog_park.name %></p>
+    </div>
+    </div>
+    <div class="text">
+<h1> What changes would you like to make? </h1>
 <br>
 <form action="/dogparks/<%= @dog_park.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label for="name">Name:</label><br>
     <input type="text" id="name" name="dogpark[name]" value= <%=@dog_park.name %>><br>
+    <br>
+    <label for="address">Address:</label><br>
+    <input type="text" id="address" name="dogpark[address]" value= <%=@dog_park.address %>><br>
     <br>
     <label for="neighborhood">Neighborhood:</label><br>
     <input type="text" id="neighborhood" name="dogpark[neighborhood]" value= <%=@dog_park.neighborhood %>><br>

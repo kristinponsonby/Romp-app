@@ -1,15 +1,28 @@
+<div class="hero-image-2">
+  <div class="hero-text-2">
+    <p> <%= @dog_park.name %></p>
+    </div>
+    </div>
+    <div class="text">
 <h1> <%= @dog_park.name %></h1>
 <br>
 <p>Name: <%=@dog_park.name %></p>
+<p>Address: <%=@dog_park.address %></p>
 <p>Neighborhood: <%=@dog_park.neighborhood %></p>
 <p>Size: <%=@dog_park.size %></p>
 <p>Water Available?: <%=@dog_park.water %></p> 
 <p>Submitted By: <a href="/users/<%=@dog_park.user.id%>"><%=@dog_park.user.username %></a></p>
 
+
+
+<% if current_user == @dog_park.user %> 
+
 <a href="/dogparks/<%= @dog_park.id %>/edit"> Edit <%= @dog_park.name %></a>
-<br>
-<br>
-<form action="/dogparks/<%= @dog_park.id %>" method="post">
-<input type ="hidden" name="_method" value ="delete">
-<input type="submit" value="Delete Dog Park">
-</form>
+   
+    <br>
+    <br>
+    <form action="/dogparks/<%= @dog_park.id %>" method="post">
+    <input type ="hidden" name="_method" value ="delete">
+    <input type="submit" value="Delete Dog Park">
+    </form>
+<% end %>

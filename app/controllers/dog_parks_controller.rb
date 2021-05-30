@@ -19,8 +19,12 @@ class DogParksController < ApplicationController
 
     #index
     get "/dogparks" do
-        @dog_parks = DogPark.all
-        erb :"dog_parks/index.html"
+        if params[:search]
+            @dog_parks = DogPark.where('name LIKE ?', "%#{params[:search]}%")
+        else 
+            @dog_parks = DogPark.all
+        end
+            erb :"dog_parks/index.html"
     end
 
     #show specific dog park
@@ -52,6 +56,5 @@ class DogParksController < ApplicationController
         dog_park.destroy
         redirect "/dogparks"
     end
-
-
+    
 end
